@@ -3,12 +3,11 @@ const app = express();
 const cors = require('cors');
 
 app.use(cors());
+//PARSE JSON BODY
+app.use(express.json());
 
 //IMPORT CONTROLLER
 const transactionsController = require('./controllers/transactionsController');
-
-//PARSE JSON BODY
-app.use(express.json());
 
 app.get('/', (req, res) => {
   res.send('Hello World! Welcome to the Backend Budget App!');
